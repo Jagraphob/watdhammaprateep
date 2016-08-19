@@ -1,0 +1,22 @@
+{
+  "name": "watdhammaprateep",
+  "version": "1.0.0",
+  "description": "watdhammaprateep",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jagraphob/watdhammaprateep.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jagraphob/watdhammaprateep/issues"
+  },
+  "homepage": "https://github.com/Jagraphob/watdhammaprateep#readme",
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  }
+}

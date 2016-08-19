@@ -1,0 +1,32 @@
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #b35900;
+    margin-bottom: 0px;
+    border-radius: 0;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.navbtn {
+    margin-right: 15px;
+}
+
+.menubar {
+    width: 100% !important;
+}
+
+ .menuitem {
+     padding-top: 10px;
+     background-color: #ffb84d;
+     text-align: center;
+     font-size: 30px;
+     color: white;
+     height: 60px;
+     border-bottom: 1px solid white;
+ }
