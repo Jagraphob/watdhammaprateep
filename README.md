@@ -3,7 +3,7 @@ watdhammaprateep
 
 Development setup:  
 1.  Install nodejs https://nodejs.org/en/  
-2.  clone project  
+2.  clone project.  If you can't clone, you may want to setup SSH with github https://help.github.com/articles/generating-an-ssh-key/  
 3.  run "npm install"  
 4.  run "bower install"  
 5.  run "npm run dev"  
