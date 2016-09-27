@@ -27,29 +27,27 @@
     <script src="/app/components/calendar/calendar.controller.js"></script>
 </head>
 <body  ng-controller="mainCtrl as vm">
-        <nav class="navbar">
+        <nav class="navbar ">
             <div class="container">
-                <a class="navbar-brand" ng-href="#home">Wat Dhammaprateep</a>
-                <button type="button" class="btn navbar-btn navbtn pull-right" ng-click="vm.isCollapsed = !vm.isCollapsed"><i class="fa fa-bars"></i></button>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menubar" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" ui-sref="home">Wat Dhammaprateep</a>
+                </div>
+                <div class="collapse navbar-collapse" id="menubar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a ui-sref="home">Home</a></li>
+                        <li><a ui-sref="news">News</a></li>
+                        <li><a ui-sref="calendar">Calendar</a></li>
+                        <li><a ui-sref="home">Contact Us</a></li>
+                    </ul>
+
+                </div>
             </div>
         </nav>
-        <div class="menubar" uib-collapse="vm.isCollapsed" ng-cloak>
-              <a ui-sref="home">
-                <div class="menuitem"  ng-click="vm.isCollapsed = !vm.isCollapsed">
-                    <p>Home</p>
-                </div>
-              </a>
-              <a ui-sref="news">
-                <div class="menuitem"  ng-click="vm.isCollapsed = !vm.isCollapsed">
-                    <p>News</p>
-                </div>
-              </a>
-              <a ui-sref="calendar">
-                <div class="menuitem"  ng-click="vm.isCollapsed = !vm.isCollapsed">
-                    <p>Calendar</p>
-                </div>
-              </a>
-        </div>
+        <div>
         <div ui-view></div>
 </body>
 </html>

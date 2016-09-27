@@ -1,32 +1,106 @@
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
+    color: #fff
 }
+
+/**************************  Navigation ********************************/
 
 .navbar {
     background-color: #b35900;
     margin-bottom: 0px;
     border-radius: 0;
+    color: #fff;
 }
 
-.navbar-brand {
-    color: white;
+ul.nav a:hover { color: #b35900 !important; }
+
+/**************************  Title Image ********************************/
+
+.title h1 {
+  color: #fff;
+  font-size: 8vw;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+.title {
+  height: 180px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../content/images/title.jpg);
 }
 
-.navbtn {
-    margin-right: 15px;
+/****************************************************************************/
+                  /* media query*/   /* tablet potrati*/
+/****************************************************************************/
+@media all and (min-width: 768px){
+    .title h1 {
+    color: #fff;
+    font-size: 6vw;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+  }
+  .title {
+    height: 280px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../content/images/title.jpg);
+  }
 }
 
-.menubar {
-    width: 100% !important;
+
+/****************************************************************************/
+                  /* media query*/   /* tablet landscape*/
+/****************************************************************************/
+@media all and (min-width: 1024px){
+
+    .title h1 {
+        color: #fff;
+        font-size: 5vw;
+        font-weight: 600;
+        text-align: center;
+        width: 100%;
+      }
+      .title {
+        height: 330px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        background-image: url(../content/images/title.jpg);
+      }
+
 }
 
- .menuitem {
-     padding-top: 10px;
-     background-color: #ffb84d;
-     text-align: center;
-     font-size: 30px;
-     color: white;
-     height: 60px;
-     border-bottom: 1px solid white;
- }
+/****************************************************************************/
+          /* media query */   /** desktop **/   /* 1280 & above */
+/****************************************************************************/
+@media all and (min-width: 1280px){
+
+    .title h1 {
+        color: #fff;
+        font-size: 3vw;
+        font-weight: 600;
+        text-align: center;
+        width: 100%;
+      }
+      .title {
+        height: 530px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        background-image: url(../content/images/title.jpg);
+      }
+
+}
