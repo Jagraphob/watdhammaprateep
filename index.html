@@ -16,17 +16,14 @@
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-animate/angular-animate.js"></script>
     <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="/bower_components/firebase/firebase.js"></script>
     <script src="/bower_components/angularfire/dist/angularfire.min.js"></script>
 
     <script src="/app/app.js"></script>
     <script src="/app/components/main/main.controller.js"></script>
-    <script src="/app/components/home/home.component.js"></script>
     <script src="/app/components/home/home.controller.js"></script>
-    <script src="/app/components/news/news.component.js"></script>
     <script src="/app/components/news/news.controller.js"></script>
-    <script src="/app/components/calendar/calendar.component.js"></script>
     <script src="/app/components/calendar/calendar.controller.js"></script>
 </head>
 <body  ng-controller="mainCtrl as vm">
@@ -37,22 +34,22 @@
             </div>
         </nav>
         <div class="menubar" uib-collapse="vm.isCollapsed" ng-cloak>
-            <a href="#home">
-                <div class="menuitem" ng-click="vm.isCollapsed = !vm.isCollapsed">
+              <a ui-sref="home">
+                <div class="menuitem"  ng-click="vm.isCollapsed = !vm.isCollapsed">
                     <p>Home</p>
                 </div>
-            </a>
-            <a href="#news">
-                <div class="menuitem" ng-click="vm.isCollapsed = !vm.isCollapsed">
+              </a>
+              <a ui-sref="news">
+                <div class="menuitem"  ng-click="vm.isCollapsed = !vm.isCollapsed">
                     <p>News</p>
                 </div>
-            </a>
-            <a href="#calendar">
-                <div class="menuitem" ng-click="vm.isCollapsed = !vm.isCollapsed">
+              </a>
+              <a ui-sref="calendar">
+                <div class="menuitem"  ng-click="vm.isCollapsed = !vm.isCollapsed">
                     <p>Calendar</p>
                 </div>
-            </a>
+              </a>
         </div>
-        <ng-view></ng-view>
+        <div ui-view></div>
 </body>
 </html>

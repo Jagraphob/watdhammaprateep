@@ -1,5 +1,5 @@
-angular.module('watApp', ['ngRoute','firebase','ui.bootstrap'])
-    .config(['$routeProvider', function($routeProvider){
+angular.module('watApp', ['ui.router','firebase','ui.bootstrap'])
+    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
         // Initialize Firebase
         var config = {
@@ -10,15 +10,25 @@ angular.module('watApp', ['ngRoute','firebase','ui.bootstrap'])
         };
         firebase.initializeApp(config);
 
-        $routeProvider
-            .when('/home', {
-                template: '<home></home>'
+        $stateProvider
+            .state('home', {
+                url: '/home',
+                templateUrl: '/app/components/home/home.html',
+                controllerAs: 'vm',
+                controller: 'homeCtrl'
             })
-            .when('/news', {
-                template: '<news></news>'
+            .state('news', {
+              url: '/news',
+              templateUrl: '/app/components/news/news.html',
+              controllerAs: 'vm',
+              controller: 'newsCtrl'
             })
-            .when('/calendar', {
-                template: '<calendar></calendar>'
-            })
-            .otherwise('/home');
+            .state('calendar', {
+              url: '/calendar',
+              templateUrl: '/app/components/calendar/calendar.html',
+              controllerAs: 'vm',
+              controller: 'calendarCtrl'
+            });
+            $urlRouterProvider.otherwise("/home");
+
     }]);
