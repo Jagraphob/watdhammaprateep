@@ -3,5 +3,7 @@ angular.module('watApp')
 
         var vm = this;
 
+        vm.latestNewsText = "We just had an event on "
+        vm.quickDhamma = "Everything that has a beginning has an end";
 
     }]);

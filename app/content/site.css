@@ -1,8 +1,50 @@
+@font-face {
+    font-family: "Charmonman";
+    src: url(../content/font/THCharmonmanBold.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Krub";
+    src: url(../content/font/THKrubBold.ttf) format("truetype");
+}
+
+.font-Charmonman {
+    font-family: "Charmonman";
+}
+
+.font-Krub {
+    font-family: "Krub";
+}
+
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
     color: #fff
 }
+
+body {
+    font-family: "Arial";
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+p {
+    font-weight: 100;
+    margin: 0;
+}
+
+#footer{
+    background-color: #b35900;
+}
+
+#footer p {
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: 16px;
+    color: #fff;
+}
+
+
 
 /**************************  Navigation ********************************/
 
@@ -15,7 +57,7 @@ a:hover, a:visited, a:link, a:active
 
 ul.nav a:hover { color: #b35900 !important; }
 
-/**************************  Title Image ********************************/
+/**************************  Home / Title Image ********************************/
 
 .title h1 {
   color: #fff;
@@ -32,6 +74,44 @@ ul.nav a:hover { color: #b35900 !important; }
   background-size: cover;
   background-position: center;
   background-image: url(../content/images/title.jpg);
+}
+
+/**************************  Home / Intro ** ********************************/
+
+#home-intro {
+    margin: 40px auto;
+}
+
+#home-intropic {
+    box-shadow: 5px 1px 5px grey;
+}
+
+#home-introheading {
+    text-align: center;
+    border-bottom: 1px solid #111;
+    border-top: 1px solid #111;
+}
+
+/**************************  Home / Intro **********************************/
+#home-updates {
+    background-color: black;
+    text-align: center;
+    color: #fff;
+}
+
+#home-updates div div {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+
+}
+/**************************  Home / quickDhamma  ****************************/
+#home-quickDhamma {
+    text-align: center;
+}
+
+#home-quickDhamma div {
+    margin-top: 40px;
+    border-top: 1px solid #111;
 }
 
 /****************************************************************************/
@@ -63,20 +143,27 @@ ul.nav a:hover { color: #b35900 !important; }
 @media all and (min-width: 1024px){
 
     .title h1 {
-        color: #fff;
-        font-size: 5vw;
-        font-weight: 600;
-        text-align: center;
-        width: 100%;
+            color: #fff;
+            font-size: 5vw;
+            font-weight: 600;
+            text-align: center;
+            width: 100%;
       }
       .title {
-        height: 330px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        background-size: cover;
-        background-position: center;
-        background-image: url(../content/images/title.jpg);
+          height: 330px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          background-size: cover;
+          background-position: center;
+          background-image: url(../content/images/title.jpg);
+      }
+
+      #home-updates div div {
+          border-top: none;
+          border-bottom: none;
+          border-left: 1px solid #fff;
+          border-right: 1px solid #fff;
       }
 
 }
