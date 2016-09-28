@@ -33,7 +33,7 @@ p {
 }
 
 #footer{
-    background-color: #b35900;
+    background-color: #776046;
 }
 
 #footer p {
@@ -43,8 +43,6 @@ p {
     font-size: 16px;
     color: #fff;
 }
-
-
 
 /**************************  Navigation ********************************/
 
@@ -92,18 +90,29 @@ ul.nav a:hover { color: #b35900 !important; }
     border-top: 1px solid #111;
 }
 
-/**************************  Home / Intro **********************************/
+/**************************  Home / Updates **********************************/
 #home-updates {
-    background-color: black;
-    text-align: center;
+    background-color: #b35900;
     color: #fff;
+    text-align: center;
 }
 
 #home-updates div div {
     border-bottom: 1px solid #fff;
     border-top: 1px solid #fff;
-
+    height: 100%;
 }
+#home-latest-news {
+    height: 100%;
+}
+#home-updates-latestNewsPic {
+    display: block;
+    margin: 0 auto;
+    width: 180px;
+    height: auto;
+    padding-bottom: 20px;
+}
+
 /**************************  Home / quickDhamma  ****************************/
 #home-quickDhamma {
     text-align: center;
