@@ -80,9 +80,7 @@ ul.nav a:hover { color: #b35900 !important; }
     margin: 40px auto;
 }
 
-#home-intropic {
-    box-shadow: 5px 1px 5px grey;
-}
+
 
 #home-introheading {
     text-align: center;
@@ -143,6 +141,14 @@ ul.nav a:hover { color: #b35900 !important; }
     background-position: center;
     background-image: url(../content/images/title.jpg);
   }
+
+  #home-intropic {
+      box-shadow: 5px 1px 5px grey;
+      width: 100%;
+      height: auto;;
+      display: block;
+  }
+
 }
 
 
