@@ -1,1 +1,26 @@
-<h1>Calendar</h1>
+<div class="container">
+    <div id="calendarCtrl-buttons">
+        <button class="btn btn-default" mwl-date-modifier date="vm.viewDate" decrement="vm.calendarView"><i class="fa fa-chevron-left"></i></button>
+        <button class="btn btn-success" mwl-date-modifier date="vm.viewDate" set-to-today>Today</button>
+        <button class="btn btn-default" mwl-date-modifier date="vm.viewDate" increment="vm.calendarView"><i class="fa fa-chevron-right"></i></button>
+        <div class="pull-right">
+            <div class="btn-group">
+                <label class="btn btn-default" ng-model="vm.calendarView" uib-btn-radio="'month'">Month</label>
+                <label class="btn btn-default" ng-model="vm.calendarView" uib-btn-radio="'day'">Day</label>
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <h3>{{vm.calendarTitle}}</h3>
+    </div>
+    <mwl-calendar
+        view="vm.calendarView"
+        view-date="vm.viewDate"
+        events="vm.events"
+        view-title="vm.calendarTitle"
+        on-event-click="vm.eventClicked(calendarEvent)"
+        on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
+        cell-is-open="true">
+    </mwl-calendar>
+</div>

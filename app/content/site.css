@@ -121,6 +121,11 @@ ul.nav a:hover { color: #b35900 !important; }
     border-top: 1px solid #111;
 }
 
+
+#calendarCtrl-buttons{
+    margin-top: 20px;
+}
+
 /****************************************************************************/
                   /* media query*/   /* tablet potrati*/
 /****************************************************************************/

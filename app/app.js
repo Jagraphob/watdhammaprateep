@@ -1,4 +1,4 @@
-angular.module('watApp', ['ui.router','firebase','ui.bootstrap', 'ui.calendar'])
+angular.module('watApp', ['ui.router','firebase', 'mwl.calendar', 'ui.bootstrap'])
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
         // Initialize Firebase
