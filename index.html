@@ -18,16 +18,20 @@
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="/bower_components/bootstrap-ui-datetime-picker/dist/datetime-picker.min.js"></script>
     <script src="/bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="/bower_components/firebase/firebase.js"></script>
     <script src="/bower_components/angularfire/dist/angularfire.min.js"></script>
 
     <script src="/app/app.js"></script>
+    <script src="/app/services/auth.js"></script>
+    <script src="/app/services/fbRef.js"></script>
     <script src="/app/components/main/main.controller.js"></script>
     <script src="/app/components/home/home.controller.js"></script>
     <script src="/app/components/news/news.controller.js"></script>
     <script src="/app/components/calendar/calendar.controller.js"></script>
+    <script src="/app/components/contactus/contactus.controller.js"></script>
 </head>
 <body  ng-controller="mainCtrl as vm">
         <nav class="navbar ">
@@ -44,13 +48,19 @@
                         <li><a ui-sref="home" data-toggle="collapse" data-target="#menubar">Home</a></li>
                         <li><a ui-sref="news" data-toggle="collapse" data-target="#menubar">News</a></li>
                         <li><a ui-sref="calendar" data-toggle="collapse" data-target="#menubar">Calendar</a></li>
-                        <li><a ui-sref="home" data-toggle="collapse" data-target="#menubar">Contact Us</a></li>
+                        <li><a ui-sref="contactus" data-toggle="collapse" data-target="#menubar">Contact Us</a></li>
                     </ul>
-
                 </div>
             </div>
         </nav>
         <div>
+        <div class="spinner" ng-show="stateIsLoading">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
         <div ui-view></div>
         <div id="footer">
             <p>

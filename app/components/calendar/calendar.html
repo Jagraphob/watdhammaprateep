@@ -23,4 +23,46 @@
         on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
         cell-is-open="true">
     </mwl-calendar>
+    <div id="calendar-admin">
+        <h3>New Event</h3>
+        <form class="form-horizontal" name="newEvent" novalidate>
+            <div class="form-group">
+                <label for="newEventName" class="col-xs-2 control-label">Event Name</label>
+                <div class="col-xs-10">
+                    <input type="text" class="form-control" id="newEventName" ng-model="vm.newEventName" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="newEventName" class="col-xs-2 control-label">Event Date</label>
+                <div class="col-xs-10 col-md-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" datetime-picker="dd MMM yyyy HH:mm" ng-model="vm.newEventDate" is-open="datepickerIsOpen" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="datepickerIsOpen=!datepickerIsOpen"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="newEventColor" class="col-xs-2 control-label">Category</label>
+                <div class="col-xs-10">
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" ng-value="vm.colorSetting.important" ng-model="vm.newEventColor" /> Important
+                        </label>
+                    </div>
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" ng-value="vm.colorSetting.info" ng-model="vm.newEventColor"/> Info
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-2 col-xs-10">
+                    <button type="submit" class="btn btn-success" ng-click="vm.createEvent()">Create</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

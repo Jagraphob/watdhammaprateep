@@ -1,26 +1,45 @@
 angular.module('watApp')
-    .controller('calendarCtrl', ['$scope', 'calendarConfig', function($scope, calendarConfig){
+    .controller('calendarCtrl', ['$scope', 'calendarConfig', 'events', function($scope, calendarConfig, events){
 
         var vm = this;
 
+        events.forEach(event => {
+            event.startsAt = new Date(event.startsAt);
+        });
+        vm.events = events
+
         vm.calendarView = 'month';
         vm.viewDate = new Date();
-
-        vm.events = [
-            {
-                title: "ตักบาตร",
-                startsAt: new Date("October 3, 2016 9:30:00"),
-                color: calendarConfig.colorTypes.info
+        vm.colorSetting = {
+            important: {
+                primary: "#ad2121",
+                secondary: "#fae3e3"
             },
-            {
-                title: "Loy Kra Tong",
-                startsAt: new Date("October 13, 2016 9:30:00"),
-                color: calendarConfig.colorTypes.info
-            },
-            {
-                title: "Meditation",
-                startsAt: new Date("October 13, 2016 17:30:00"),
-                color: calendarConfig.colorTypes.info
+            info: {
+                primary: "#1e90ff",
+                secondary: "#d1e8ff"
             }
-        ];
+        };
+
+        /*** functions list **/
+        vm.createEvent = createEvent
+
+
+        /*** functions ***/
+        function createEvent() {
+            // var datetime = vm.newEventDate.getTime();
+            // console.log(datetime);
+            events.$add({
+                title: vm.newEventName,
+                color: vm.newEventColor,
+                startsAt: vm.newEventDate.getTime()
+            })
+
+            vm.events = events;
+
+            vm.newEventName = "";
+            vm.newEventColor = "";
+            vm.newEventDate = "";
+        }
+
     }]);
