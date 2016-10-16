@@ -1,4 +1,44 @@
 <div class="container">
-<h1>news</h1>
-<p>Under Construction</p>
+    <div class="col-xs-12 col-md-6" ng-repeat="item in vm.news">
+        <div class="card">
+            <div class="card-image">
+                <img class="img-responsive" ng-src={{item.picUrl}}/>
+                <span class="card-title font-Krub">{{item.name}}</span>
+            </div>
+            <div class="card-content font-Krub">
+                <p>{{item.content}}</p>
+            </div>
+            <div class="card-date">
+                <p>{{item.timestamp | date:'medium'}}</p>
+            </div>
+        </div>
+    </div>
+    <div id="news-admin">
+        <h3>New News</h3>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="newNewsName" class="col-xs-2 control-label">News Name</label>
+                <div class="col-xs-10">
+                    <input type="text" class="form-control" id="newNewsName" ng-model="vm.newNewsName" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="newNewsContent"class="col-xs-2 control-label">News Content</label>
+                <div class="col-xs-10">
+                    <textarea class="form-control" rows="4" id="newNewsContent" ng-model="vm.newNewsContent" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="newNewsPic"class="col-xs-2 control-label">News Picture</label>
+                <div class="col-xs-10">
+                    <input type="file" class="form-control" id="newNewsPic" name="newNewsPic"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-2 col-xs-10">
+                    <button type="submit" class="btn btn-success" ng-click="vm.createNews()">Create</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

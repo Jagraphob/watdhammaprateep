@@ -3,9 +3,13 @@ angular.module('watApp')
 
         var vm = this;
 
-        events.forEach(event => {
+        events.forEach(function (event) {
             event.startsAt = new Date(event.startsAt);
         });
+        var highlightEvents = events.filter(function (event) {
+            return event.color.primary == "#ad2121";
+        })[0];
+
         vm.events = events
 
         vm.calendarView = 'month';
@@ -21,7 +25,7 @@ angular.module('watApp')
             }
         };
 
-        /*** functions list **/
+        /*** functions list ***/
         vm.createEvent = createEvent
 
 

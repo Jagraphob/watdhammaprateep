@@ -27,7 +27,8 @@
     "jquery": "~3.1.0",
     "moment": "~2.15.1",
     "angular-bootstrap-calendar": "~0.23.0",
-    "bootstrap-ui-datetime-picker": "~2.4.3"
+    "bootstrap-ui-datetime-picker": "~2.4.3",
+    "MDBootstrap": "*"
   },
   "overrides": {
     "bootstrap": {

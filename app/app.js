@@ -34,7 +34,12 @@ angular.module('watApp', ['ui.router','firebase', 'mwl.calendar', 'ui.bootstrap'
               url: '/news',
               templateUrl: '/app/components/news/news.html',
               controllerAs: 'vm',
-              controller: 'newsCtrl'
+              controller: 'newsCtrl',
+              resolve: {
+                  news: ['fbRef', '$firebaseArray', function(fbRef, $firebaseArray){
+                      return $firebaseArray(fbRef.getNewsRef().orderByChild("timestamp")).$loaded();
+                  }]
+              }
             })
             .state('calendar', {
               url: '/calendar',
@@ -43,7 +48,7 @@ angular.module('watApp', ['ui.router','firebase', 'mwl.calendar', 'ui.bootstrap'
               controller: 'calendarCtrl',
               resolve: {
                   events: ['fbRef', '$firebaseArray', function(fbRef, $firebaseArray){
-                      return $firebaseArray(fbRef.getCalendarRef()).$loaded();
+                      return $firebaseArray(fbRef.getCalendarRef().orderByChild("startsAt")).$loaded();
                  }]
               }
             })

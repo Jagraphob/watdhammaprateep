@@ -25,11 +25,13 @@ coverage
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
+public
 
 # Dependency directories
 node_modules
 bower_components
 jspm_packages
+.tmp
 
 # Optional npm cache directory
 .npm

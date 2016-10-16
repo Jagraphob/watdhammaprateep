@@ -4,7 +4,7 @@ angular.module('watApp')
         var vm = this;
 
         vm.latestNewsText = "We just had an event on 25th of November"
-        vm.quickDhamma = "Everything that has a beginning has an end";
+        vm.quickDhamma = "ไม่ว่าธรรมส่วนใด ถ้าสำคัญ “ตน” ว่าเสวย เป็นอันผิดทั้งนั้น คนไม่สนใจธรรม ธรรมก็ไม่เข้าถึงใจคน จึงกลายเป็นว่า คนก็สักว่าคน ธรรมก็สักว่าธรรม ไม่อาจยังประโยชน์ให้สำเร็จได้ แม้คนจะมีจำนวนมาก และแสดงธรรมให้ฟังทั้งพระไตรปิฎก จึงเป็นเหมือนเทน้ำใสหลังหมา มันสลัดออกเกลี้ยง ไม่มีเหลือ ธรรมจึงไม่มีความหมายในใจของคน เหมือนน้ำไม่มีความหมายบนหลังหมา ฉะนั้น :: พระอาจารย์มั่น ภูริทัตตเถระ :: ";
         vm.latestNewsPic = "/app/content/images/latestNews.jpg"
 
     }]);

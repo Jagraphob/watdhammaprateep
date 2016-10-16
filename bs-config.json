@@ -1,5 +1,5 @@
 {
     "watchOptions" : {
-        "ignored" : ["node_modules", "bower_components"]
+        "ignored" : ["node_modules", "bower_components", "public", ".tmp", "gulpfile.js"]
     }
 }
