@@ -1,9 +1,15 @@
 angular.module('watApp')
-    .controller('newsCtrl', ['$scope', 'fbRef', 'news', '$state', function($scope, fbRef, news, $state){
+    .controller('newsCtrl', ['$rootScope', '$scope', '$state', 'fbRef', 'news', '$state', function($rootScope, $scope, $state ,fbRef, news, $state){
 
         var vm = this;
-
         vm.news = news;
+
+        vm.isAdmin = $rootScope.isAdmin;
+
+        $rootScope.$on('isAdmin',function(){
+            vm.isAdmin = $rootScope.isAdmin;
+            $state.reload();
+        });
 
         vm.createNews = createNews;
 

@@ -1,17 +1,5 @@
 angular.module('watApp', ['ui.router','firebase', 'mwl.calendar', 'ui.bootstrap', 'ui.bootstrap.datetimepicker'])
-    .run(['$rootScope', '$stateParams', function($rootScope, $stateParams){
-        $rootScope.$stateParams = $stateParams;
-
-        //spinner for stateChange
-        $rootScope.$on('$stateChangeStart',function(){
-            $rootScope.stateIsLoading = true;
-        });
-        $rootScope.$on('$stateChangeSuccess',function(){
-            $rootScope.stateIsLoading = false;
-        });
-
-    }])
-    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
         // Initialize Firebase
         var config = {
@@ -59,4 +47,32 @@ angular.module('watApp', ['ui.router','firebase', 'mwl.calendar', 'ui.bootstrap'
                 controller: 'contactCtrl'
             });
             $urlRouterProvider.otherwise("/home");
-    }]);
+    }])
+    .run(['$rootScope', '$stateParams', 'Auth', 'AuthRole', function($rootScope, $stateParams, auth, AuthRole){
+
+        $rootScope.$stateParams = $stateParams;
+        $rootScope.user = null;
+        $rootScope.isAdmin = false;
+
+        //spinner for stateChange
+        $rootScope.$on('$stateChangeStart',function(){
+            $rootScope.stateIsLoading = true;
+        });
+        $rootScope.$on('$stateChangeSuccess',function(){
+            $rootScope.stateIsLoading = false;
+        });
+
+        auth.$onAuthStateChanged(function(user){
+            if (user) {
+                $rootScope.user = user;
+                AuthRole.checkIsAdmin(user);
+                $rootScope.$broadcast("user");
+                console.log("Signed in as:", user.uid);
+              } else {
+                $rootScope.user = null;
+                $rootScope.$broadcast("user");
+                console.log("Signed Out");
+              }
+        });
+
+    }])

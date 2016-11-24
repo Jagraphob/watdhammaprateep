@@ -1,7 +1,13 @@
 angular.module('watApp')
-    .controller('calendarCtrl', ['$scope', 'calendarConfig', 'events', function($scope, calendarConfig, events){
+    .controller('calendarCtrl', ['$rootScope', '$state', 'calendarConfig', 'events', function($rootScope, $state, calendarConfig, events){
 
         var vm = this;
+
+        vm.isAdmin = $rootScope.isAdmin;
+        $rootScope.$on('isAdmin',function(){
+            vm.isAdmin = $rootScope.isAdmin;
+            $state.reload();
+        });
 
         events.forEach(function (event) {
             event.startsAt = new Date(event.startsAt);

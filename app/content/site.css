@@ -18,7 +18,7 @@
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
-    color: #fff
+    color: #fff;
 }
 
 body {
@@ -115,6 +115,11 @@ p {
     color: #fff;
 }
 
+.login-nav {
+    color: #eee;
+    cursor: pointer;
+}
+
 ul.nav a:hover { color: #b35900 !important; }
 
 /**************************  Spinner ********************************/
@@ -190,6 +195,10 @@ ul.nav a:hover { color: #b35900 !important; }
   background-image: url(/app/content/images/title.jpg);
 }
 
+.admin-panel {
+    margin-top: 20px;
+    border-top: 1px solid #111;
+}
 /**************************  Home / Intro ** ********************************/
 
 #home-intro {
@@ -235,16 +244,17 @@ ul.nav a:hover { color: #b35900 !important; }
     border-top: 1px solid #111;
 }
 
+/**************************  News ****************************/
+ #news-admin {
+     margin-top: 40px;
+ }
 
 /**************************  Calendar  ****************************/
 #calendarCtrl-buttons{
     margin-top: 20px;
 }
 
-#calendar-admin{
-    margin-top: 20px;
-    border-top: 1px solid #111;
-}
+
 
 /**************************  Contact Us  ****************************/
 

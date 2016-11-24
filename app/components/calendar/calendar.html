@@ -24,8 +24,8 @@
         on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
         cell-is-open="true">
     </mwl-calendar>
-    <div id="calendar-admin">
-        <h3>New Event</h3>
+    <div id="calendar-admin" class="admin-panel" ng-show="vm.isAdmin">
+        <h3>Create Event</h3>
         <form class="form-horizontal" name="newEvent" novalidate>
             <div class="form-group">
                 <label for="newEventName" class="col-xs-2 control-label">Event Name</label>

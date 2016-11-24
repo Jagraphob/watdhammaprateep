@@ -4,7 +4,8 @@ angular.module('watApp')
     return {
         getNewsRef: getNewsRef,
         getStorageRef: getStorageRef,
-        getCalendarRef: getCalendarRef
+        getCalendarRef: getCalendarRef,
+        getAdmin : getAdmin
     }
 
     function getNewsRef() {
@@ -17,6 +18,10 @@ angular.module('watApp')
 
     function getStorageRef() {
         return firebase.storage().ref();
+    }
+
+    function getAdmin() {
+        // TODO
     }
 }
 ]);

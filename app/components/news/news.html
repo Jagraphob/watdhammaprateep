@@ -1,20 +1,22 @@
 <div class="container">
-    <div class="col-xs-12 col-md-6" ng-repeat="item in vm.news">
-        <div class="card">
-            <div class="card-image">
-                <img class="img-responsive" ng-src={{item.picUrl}}/>
-                <span class="card-title font-Krub">{{item.name}}</span>
-            </div>
-            <div class="card-content font-Krub">
-                <p>{{item.content}}</p>
-            </div>
-            <div class="card-date">
-                <p>{{item.timestamp | date:'medium'}}</p>
+    <div class="row">
+        <div class="col-xs-12 col-md-6" ng-repeat="item in vm.news">
+            <div class="card">
+                <div class="card-image">
+                    <img class="img-responsive" ng-src={{item.picUrl}}/>
+                    <span class="card-title font-Krub">{{item.name}}</span>
+                </div>
+                <div class="card-content font-Krub">
+                    <p>{{item.content}}</p>
+                </div>
+                <div class="card-date">
+                    <p>{{item.timestamp | date:'medium'}}</p>
+                </div>
             </div>
         </div>
     </div>
-    <div id="news-admin">
-        <h3>New News</h3>
+    <div class="admin-panel" ng-show="vm.isAdmin">
+        <h3>Create News</h3>
         <form class="form-horizontal">
             <div class="form-group">
                 <label for="newNewsName" class="col-xs-2 control-label">News Name</label>
