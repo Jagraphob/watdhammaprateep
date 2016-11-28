@@ -16,7 +16,12 @@ angular.module('watApp', ['ui.router','firebase', 'mwl.calendar', 'ui.bootstrap'
                 url: '/home',
                 templateUrl: '/app/components/home/home.html',
                 controllerAs: 'vm',
-                controller: 'homeCtrl'
+                controller: 'homeCtrl',
+                resolve: {
+                    quickDhamma: ['fbRef', '$firebaseObject', function(fbRef, $firebaseObject){
+                        return $firebaseObject(fbRef.getQuickDhamma()).$loaded();
+                    }]
+                }
             })
             .state('news', {
               url: '/news',

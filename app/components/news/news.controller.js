@@ -5,7 +5,6 @@ angular.module('watApp')
         vm.news = news;
 
         vm.isAdmin = $rootScope.isAdmin;
-
         $rootScope.$on('isAdmin',function(){
             vm.isAdmin = $rootScope.isAdmin;
             $state.reload();

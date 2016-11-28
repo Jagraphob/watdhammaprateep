@@ -176,6 +176,12 @@ ul.nav a:hover { color: #b35900 !important; }
   }
 }
 
+/**************************  Page-content ********************************/
+
+.page-content {
+    margin-bottom: 20px;
+}
+
 /**************************  Home / Title Image ********************************/
 
 .title h1 {

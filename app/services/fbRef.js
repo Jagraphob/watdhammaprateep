@@ -2,10 +2,14 @@ angular.module('watApp')
     .factory("fbRef", ['$firebaseObject', 'Auth',  function($firebaseObject, auth) {
 
     return {
+        getQuickDhamma: getQuickDhamma,
         getNewsRef: getNewsRef,
         getStorageRef: getStorageRef,
-        getCalendarRef: getCalendarRef,
-        getAdmin : getAdmin
+        getCalendarRef: getCalendarRef
+    }
+
+    function getQuickDhamma(){
+        return firebase.database().ref().child("quickDhamma");
     }
 
     function getNewsRef() {
@@ -20,8 +24,5 @@ angular.module('watApp')
         return firebase.storage().ref();
     }
 
-    function getAdmin() {
-        // TODO
-    }
 }
 ]);

@@ -25,3 +25,19 @@
         <h2>.....</h2>
     </div>
 </div>
+<div class="container page-content">
+    <div class="admin-panel" ng-show="vm.isAdmin">
+        <h1>Edit Content</h1>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="newNewsName" class="col-xs-2 control-label">Quick Dhamma</label>
+                <div class="col-xs-10">
+                    <textarea class="form-control" rows="5" ng-model="vm.quickDhamma"></textarea>
+                </div>
+            </div>
+            <div class="col-xs-offset-2 col-xs-10">
+                <button class="btn btn-success" ng-click="vm.updateQuickDhamma()">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
