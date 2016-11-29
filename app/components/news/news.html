@@ -1,16 +1,18 @@
 <div class="container page-content">
     <div class="row">
-        <div class="col-xs-12 col-md-6" ng-repeat="item in vm.news">
+        <div class="col-xs-12 col-md-12" ng-repeat="item in vm.news | orderBy:'timestamp':true">
             <div class="card">
                 <div class="card-image">
                     <img class="img-responsive" ng-src={{item.picUrl}}/>
-                    <span class="card-title font-Krub">{{item.name}}</span>
+                </div>
+                <div class="card-content font-krub">
+                    <h3>{{item.name}}</h3>
                 </div>
                 <div class="card-content font-Krub">
                     <p>{{item.content}}</p>
                 </div>
                 <div class="card-date">
-                    <p>{{item.timestamp | date:'medium'}}</p>
+                    <p>{{item.timestamp | date:'mediumDate'}}</p>
                 </div>
             </div>
         </div>

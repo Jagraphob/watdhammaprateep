@@ -264,27 +264,33 @@ ul.nav a:hover { color: #b35900 !important; }
 
 /**************************  Contact Us  ****************************/
 
-#watAddress{
+#watAbout{
     margin-top: 20px;
 }
 
-#watAddress-heading {
+#watAbout-heading {
     text-align: center;
     border-bottom: 1px solid #111;
     border-top: 1px solid #111;
 }
 
-#watAddress-detail{
+#watAbout-detail{
     margin-top: 20px;
     margin-bottom: 20px;
 
 }
 
-#contactus-watpic{
+#watAbout-regulars {
+    margin-top: 20px;
+    border-top: 1px solid #111;
+}
+
+#about-watpic{
     box-shadow: 5px 1px 5px grey;
-    width: 80%;
+    width: 100%;
     height: auto;
     display: block;
+
 }
 
 /****************************************************************************/

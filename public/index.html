@@ -26,11 +26,12 @@
                         <li><a ui-sref="news" data-toggle="collapse" data-target="#menubar">News</a></li>
                         <li><a ui-sref="calendar" data-toggle="collapse" data-target="#menubar">Calendar</a></li>
                         <li><a ui-sref="contactus" data-toggle="collapse" data-target="#menubar">Contact Us</a></li>
+                        <li><a class="login-nav" ng-click="vm.login()" ng-show="!vm.user" data-toggle="collapse" data-target="#menubar">Login</a></li>
+                        <li><a class="login-nav" ng-click="vm.logout()" ng-show="vm.user" data-toggle="collapse" data-target="#menubar">Logout</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div>
         <div class="spinner" ng-show="stateIsLoading">
           <div class="rect1"></div>
           <div class="rect2"></div>
@@ -38,7 +39,7 @@
           <div class="rect4"></div>
           <div class="rect5"></div>
         </div>
-        <div ui-view></div>
+        <div ui-view ng-hide="stateIsLoading"></div>
         <div id="footer">
             <p>
                 Wat Dhammaprateep   13 Black Rock Roads Newlands Wellington   Tel: 021 154 7407

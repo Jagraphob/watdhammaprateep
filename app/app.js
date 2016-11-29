@@ -45,11 +45,11 @@ angular.module('watApp', ['ui.router','firebase', 'mwl.calendar', 'ui.bootstrap'
                  }]
               }
             })
-            .state('contactus', {
-                url: '/contact',
-                templateUrl: '/app/components/contactus/contactus.html',
+            .state('about', {
+                url: '/about',
+                templateUrl: '/app/components/about/about.html',
                 controllerAs: 'vm',
-                controller: 'contactCtrl'
+                controller: 'aboutCtrl'
             });
             $urlRouterProvider.otherwise("/home");
     }])
