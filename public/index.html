@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html ng-app="watApp">
 <head>
+    <title>Wat Thammaprateep NZ</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/app/content/images/favicon.png">
@@ -18,14 +19,14 @@
                         <span class="sr-only">Toggle navigation</span>
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" ui-sref="home">Wat Dhammaprateep</a>
+                    <a class="navbar-brand" ui-sref="home">Wat Dhammaprateep NZ</a>
                 </div>
                 <div class="collapse navbar-collapse" id="menubar">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a ui-sref="home" data-toggle="collapse" data-target="#menubar">Home</a></li>
                         <li><a ui-sref="news" data-toggle="collapse" data-target="#menubar">News</a></li>
                         <li><a ui-sref="calendar" data-toggle="collapse" data-target="#menubar">Calendar</a></li>
-                        <li><a ui-sref="contactus" data-toggle="collapse" data-target="#menubar">Contact Us</a></li>
+                        <li><a ui-sref="about" data-toggle="collapse" data-target="#menubar">About</a></li>
                         <li><a class="login-nav" ng-click="vm.login()" ng-show="!vm.user" data-toggle="collapse" data-target="#menubar">Login</a></li>
                         <li><a class="login-nav" ng-click="vm.logout()" ng-show="vm.user" data-toggle="collapse" data-target="#menubar">Logout</a></li>
                     </ul>
@@ -42,7 +43,7 @@
         <div ui-view ng-hide="stateIsLoading"></div>
         <div id="footer">
             <p>
-                Wat Dhammaprateep   13 Black Rock Roads Newlands Wellington   Tel: 021 154 7407
+                Wat Dhammaprateep New Zealand | 13 Black Rock Roads Newlands Wellington | Tel: 021 154 7407
             </p>
         </div>
 </body>

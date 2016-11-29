@@ -4,7 +4,7 @@ var del = require('del');
 var wiredep = require('wiredep').stream;
 
 
-gulp.task('build', ['build-css', 'build-html', 'build-fonts', 'build-images', 'build-css-map'], function(){
+gulp.task('build', ['build-css', 'build-html', 'build-fonts', 'build-images', 'build-js-map'], function(){
     return gulp
         .src('index.html')
         .pipe($.debug())
@@ -13,13 +13,20 @@ gulp.task('build', ['build-css', 'build-html', 'build-fonts', 'build-images', 'b
         .pipe(gulp.dest('./public/'))
 });
 
+gulp.task('build-js-map', ['build-css-map'], function(){
+    return gulp
+        .src([
+            './bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js.map',
+        ])
+        .pipe(gulp.dest('./public/styles/'))
+});
 
 gulp.task('build-css-map', ['clean-map'], function(){
     return gulp
         .src([
-            './bower_components/bootstrap/dist/css/bootstrap.css.map'
+            './bower_components/bootstrap/dist/css/bootstrap.css.map',
         ])
-        .pipe(gulp.dest('/public/styles/'))
+        .pipe(gulp.dest('./public/styles/'))
 });
 
 gulp.task('build-css', ['clean-css'], function(){
@@ -36,7 +43,7 @@ gulp.task('build-html', ['clean-html'], function(){
 
 gulp.task('build-fonts', ['build-lib-fonts','clean-fonts'], function(){
     return gulp
-        .src('./app/content/font/**.*')
+        .src('./app/content/fonts/**.*')
         .pipe(gulp.dest('./public/app/content/fonts/'))
 });
 
